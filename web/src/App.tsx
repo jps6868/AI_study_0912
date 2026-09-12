@@ -117,7 +117,7 @@ function App() {
 
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
               <BarRankingChart title="대리점별 매출 랭킹" data={dealershipRanking} />
-              <BarRankingChart title="카테고리별 매출" data={categoryBreakdown} />
+              <BarRankingChart title="카테고리별 매출" data={categoryBreakdown} color="#eb6834" />
             </div>
 
             <SalesTable records={filteredRecords} />

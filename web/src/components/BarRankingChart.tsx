@@ -6,9 +6,10 @@ interface BarRankingChartProps {
   title: string
   data: RankedEntry[]
   limit?: number
+  color?: string
 }
 
-export function BarRankingChart({ title, data, limit }: BarRankingChartProps) {
+export function BarRankingChart({ title, data, limit, color = '#2a78d6' }: BarRankingChartProps) {
   const shown = limit ? data.slice(0, limit) : data
   const height = Math.max(160, shown.length * 36 + 40)
 
@@ -48,7 +49,7 @@ export function BarRankingChart({ title, data, limit }: BarRankingChartProps) {
                 fontSize: 13,
               }}
             />
-            <Bar dataKey="amount" fill="#2a78d6" radius={[0, 4, 4, 0]} maxBarSize={24}>
+            <Bar dataKey="amount" fill={color} radius={[0, 4, 4, 0]} maxBarSize={24}>
               <LabelList
                 dataKey="amount"
                 position="right"
